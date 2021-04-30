@@ -7,7 +7,7 @@ const Daily = (props) => {
     <div className = "Daily">
     <u1>
         {props.temps.map((value,index)=>{
-           return <div>Day: {index+1} Temp: {value}</div>
+           return <div>Day: {index+1} Temp: {value} Weather: {props.mains[index]}</div>
         })}
         </u1>
     </div>

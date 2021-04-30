@@ -7,8 +7,9 @@ return(
     <div className = "Hourly">
         <u1>
             {props.temps.map((value,index)=>{
-                return <div>Hour: {index+1} Temp: {value}</div>
+                return <div>Hour: {index+1} Temp: {value} Weather: {props.mains[index]}</div>
             })}
+
         </u1>
     </div>
     </div>
