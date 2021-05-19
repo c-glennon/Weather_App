@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import Hourly from "./Hourly";
 import Daily from "./Daily";
 
