@@ -6,11 +6,11 @@ const Toggle = ({ hourTemps, hourMains, dayTemps, dayMains }) => {
   const [name, setName] = useState("Hourly");
   const [isHourly, setIsHourly] = useState(false);
 
-  let d = "Daily";
-  let h = "Hourly";
+  const d = "Daily";
+  const h = "Hourly";
 
   const onClick = (e) => {
-    if (name == d) {
+    if (name === d) {
       setName(h);
       setIsHourly(true);
     } else {
