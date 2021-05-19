@@ -92,39 +92,44 @@ const ZipBox = (props) => {
 
   return (
     <div style={{ textAlign: "center" }}>
-      {!isZipSubmit && (
-      <div className = "ZipForm">
-        <form onSubmit={onSubmit}>
-          <h1>What's your zip?</h1>
-          <p>Enter zip code:</p>
-          <input
-            className="zip"
-            value={zipCode || ""}
-            type="text"
-            name="zip"
-            id="zip"
-            onChange={(event) => {
-              const { value } = event.target;
-              setZipCode(value.replace(/[^\d{5}]$/, "").substr(0, 5));
-            }}
-          />
-        </form>
-      </div>)}
-      <div> 
-        {isZipSubmit && (
-          <div className="Current">
-            <Current temp={currentTemp} weather={currentMain}/>
+      {!isZipSubmit ? (
+        <div className="ZipForm">
+          <form onSubmit={onSubmit}>
+            <h1>What's your zip?</h1>
+            <p>Enter zip code:</p>
+            <input
+              className="zip"
+              value={zipCode || ""}
+              type="text"
+              name="zip"
+              id="zip"
+              onChange={(event) => {
+                const { value } = event.target;
+                setZipCode(value.replace(/[^\d{5}]$/, "").substr(0, 5));
+              }}
+            />
+          </form>
+        </div>
+      ) : (
+        <>
+          <div>
+            <div className="Current">
+              <Current temp={currentTemp} weather={currentMain} />
+            </div>
           </div>
-        )}
-      </div>
-      <div> 
-        {isZipSubmit && (
-          <div className = "Toggle" >
-          <Toggle hourTemps={hourTemps} hourMains={hourMains} dayTemps={dayTemps} dayMains={dayMains}/>
+          <div>
+            <div className="Toggle">
+              <Toggle
+                hourTemps={hourTemps}
+                hourMains={hourMains}
+                dayTemps={dayTemps}
+                dayMains={dayMains}
+              />
+            </div>
           </div>
-        )}
-      </div>
-      </div>
+        </>
+      )}
+    </div>
   );
 }
 
