@@ -4,7 +4,7 @@ import Current from "./Current";
 
 const API_KEY = process.env.REACT_APP_api_key;
 
-const ZipBox = (props) => {
+const ZipBox = () => {
 
   const [hourWeather, setHourWeather] = useState([]); 
   const [hourTemps, setHourTemps] = useState([]);
