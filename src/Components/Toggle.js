@@ -25,10 +25,11 @@ const Toggle = ({ hourTemps, hourMains, dayTemps, dayMains }) => {
         <button onClick={onClick}>Toggle forecast</button>
       </div>
       <div>
-        {isHourly && <Hourly temps={hourTemps} mains={hourMains} />}
-      </div>
-      <div>
-        {!isHourly && <Daily temps={dayTemps} mains={dayMains} />}
+        {isHourly ? (
+          <Hourly temps={hourTemps} mains={hourMains} />
+        ) : (
+          <Daily temps={dayTemps} mains={dayMains} />
+        )}
       </div>
     </div>
   );
