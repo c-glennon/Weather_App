@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Current = (props) => {
+const Current = ({temp, weather}) => {
 
 return (
     <div style={{ textAlign: "center" }}>
         <h1>Current Weather</h1>
-        <h2>Temp: {props.temp} Weather: {props.weather}</h2>
+        <h2>Temp: {temp} Weather: {weather}</h2>
     </div>
 );
 }
